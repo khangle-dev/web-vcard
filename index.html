@@ -2,73 +2,30 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Tutorials Point</title>
+    <title>PRUpass</title>
   </head>
 <body>
     <script>
-        var vCard = (function () {
-            var start = "BEGIN:VCARD\nVERSION:3.0";
-            var end = "END:VCARD";
-            var data = "";
+        const card = `BEGIN:VCARD
+VERSION:3.0
+FN;CHARSET=UTF-8:Khang Le
+N;CHARSET=UTF-8:Le;Khang;;;
+TITLE;CHARSET=UTF-8:Head of Engineering
+ORG;CHARSET=UTF-8:Prudential Vietnam
+URL;type=WORK;CHARSET=UTF-8:https://www.prudential.com.vn
+REV:2022-07-26T13:16:23.374Z
+END:VCARD`;
 
-            var init = function() {
-                data = "";
-            };
 
-            var name = function (surname, lastname) {
-                data += "N:" + lastname + ';' + surname;
-                data += "\n";
-            };
+        let a = document.createElement("a");
+        document.body.appendChild(a);
+        a.style = "display: none";
+        a.href = "data:text/x-vcard;charset=utf8," + escape(card);
+        a.download = "khangle.vcf";
+        a.click();
+        document.body.removeChild(a);
 
-            var cell = function (cell) {
-                data += "TEL;TYPE=CELL:" + cell;
-                data += "\n";
-            };
-
-            var work = function (work) {
-                data += "TEL;TYPE=WORK,VOICE:" + work;
-                data += "\n";
-            };
-
-            var other = function (work) {
-                data += "TEL;TYPE=OTHER:" + work;
-                data += "\n";
-            };
-
-            var email = function (email) {
-                data += "EMAIL;TYPE=PREF,INTERNET:" + email;
-                data += "\n";
-            };
-
-            var get = function () {
-                return start + '\n' + data + end;
-            };
-
-            return {
-                init:init,
-                name:name,
-                cell:cell,
-                work:work,
-                other:other,
-                email:email,
-                get:get
-            }
-        });
-        var card = vCard()
-        card.name ("Khang", "Le")
-        card.cell ("0989396635")
-        console.log("card")
-        console.log(card.get())
-        //window.open( "data:text/x-vcard;charset=utf8," + escape(card.get()));
-              let a = document.createElement("a");
-document.body.appendChild(a);
-a.style = "display: none";
-a.href = "data:text/x-vcard;charset=utf8," + escape(card.get());
-a.download = "download.vcf";
-a.click();
-document.body.removeChild(a);
-      
     </script>
-    <h1>HELLO</h1>
+    <h1>Khang Le</h1>
 </body>
 </html>
