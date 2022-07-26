@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>PRUpass</title>
+  </head>
+<body>
+    <script>
+        const card = `FN;CHARSET=UTF-8:Khang Le
+N;CHARSET=UTF-8:Le;Khang;;;
+EMAIL;CHARSET=UTF-8;type=WORK,INTERNET:tran.le.quoc.son@prudential.com.vn
+TEL;TYPE=CELL:+84938710728
+TITLE;CHARSET=UTF-8:Chief Information Officer
+ORG;CHARSET=UTF-8:Prudential Vietnam
+URL;type=WORK;CHARSET=UTF-8:https://www.prudential.com.vn
+REV:2022-07-26T13:22:25.100Z
+END:VCARD`;
+
+
+        let a = document.createElement("a");
+        document.body.appendChild(a);
+        a.style = "display: none";
+        a.href = "data:text/x-vcard;charset=utf8," + escape(card);
+        a.download = "khangle.vcf";
+        a.click();
+        document.body.removeChild(a);
+
+    </script>
+    <h1>Son Le</h1>
+</body>
+</html>
