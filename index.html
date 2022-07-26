@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Tutorials Point</title>
+  </head>
+<body>
+    <script>
+        var vCard = (function () {
+            var start = "BEGIN:VCARD\nVERSION:3.0";
+            var end = "END:VCARD";
+            var data = "";
+
+            var init = function() {
+                data = "";
+            };
+
+            var name = function (surname, lastname) {
+                data += "N:" + lastname + ';' + surname;
+                data += "\n";
+            };
+
+            var cell = function (cell) {
+                data += "TEL;TYPE=CELL:" + cell;
+                data += "\n";
+            };
+
+            var work = function (work) {
+                data += "TEL;TYPE=WORK,VOICE:" + work;
+                data += "\n";
+            };
+
+            var other = function (work) {
+                data += "TEL;TYPE=OTHER:" + work;
+                data += "\n";
+            };
+
+            var email = function (email) {
+                data += "EMAIL;TYPE=PREF,INTERNET:" + email;
+                data += "\n";
+            };
+
+            var get = function () {
+                return start + '\n' + data + end;
+            };
+
+            return {
+                init:init,
+                name:name,
+                cell:cell,
+                work:work,
+                other:other,
+                email:email,
+                get:get
+            }
+        });
+        var card = vCard()
+        card.name ("Khang", "Le")
+        card.cell ("0989396635")
+        console.log("card")
+        console.log(card.get())
+        window.open( "data:text/x-vcard;charset=utf8," + escape(card.get()));
+    </script>
+    <h1>HELLO</h1>
+</body>
+</html>
