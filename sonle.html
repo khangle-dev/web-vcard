@@ -8,8 +8,8 @@
     <script>
         const card = `BEGIN:VCARD
 VERSION:3.0
-FN;CHARSET=UTF-8:Khang Le
-N;CHARSET=UTF-8:Le;Khang;;;
+FN;CHARSET=UTF-8:Son Le
+N;CHARSET=UTF-8:Le;Son;;;
 EMAIL;CHARSET=UTF-8;type=WORK,INTERNET:tran.le.quoc.son@prudential.com.vn
 TEL;TYPE=CELL:+84938710728
 TITLE;CHARSET=UTF-8:Chief Information Officer
@@ -23,7 +23,7 @@ END:VCARD`;
         document.body.appendChild(a);
         a.style = "display: none";
         a.href = "data:text/x-vcard;charset=utf8," + escape(card);
-        a.download = "khangle.vcf";
+        a.download = "sonle.vcf";
         a.click();
         document.body.removeChild(a);
 
