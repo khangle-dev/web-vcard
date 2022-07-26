@@ -59,7 +59,15 @@
         card.cell ("0989396635")
         console.log("card")
         console.log(card.get())
-        window.open( "data:text/x-vcard;charset=utf8," + escape(card.get()));
+        //window.open( "data:text/x-vcard;charset=utf8," + escape(card.get()));
+              let a = document.createElement("a");
+document.body.appendChild(a);
+a.style = "display: none";
+a.href = "data:text/x-vcard;charset=utf8," + escape(card.get());
+a.download = "download.vcf";
+a.click();
+document.body.removeChild(a);
+      
     </script>
     <h1>HELLO</h1>
 </body>
