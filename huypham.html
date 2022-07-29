@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>PRUpass</title>
+  </head>
+<body>
+    <script>
+        const card = `BEGIN:VCARD
+VERSION:3.0
+FN;CHARSET=UTF-8:Pham Hoang Quang Huy 
+N;CHARSET=UTF-8:Huy;Pham;;;
+EMAIL;CHARSET=UTF-8;type=WORK,INTERNET:pham.hoang.quang.huy@prudential.com.vn
+TEL;TYPE=CELL:+84907588820
+TITLE;CHARSET=UTF-8:Senior Manager
+ORG;CHARSET=UTF-8:Prudential Vietnam
+URL;type=WORK;CHARSET=UTF-8:https://www.prudential.com.vn
+ADR:;;2-4 Ben Can Giuoc, District 8, HCM City
+REV:2022-07-26T13:22:25.100Z
+END:VCARD`;
+
+
+        let a = document.createElement("a");
+        document.body.appendChild(a);
+        a.style = "display: none";
+        a.href = "data:text/x-vcard;charset=utf8," + escape(card);
+        a.download = "huypham.vcf";
+        a.click();
+        document.body.removeChild(a);
+
+    </script>
+    <h1>Huy Pham</h1>
+</body>
+</html>
