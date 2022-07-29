@@ -27,8 +27,8 @@ END:VCARD`;
         document.body.appendChild(a);
         a.style = "display: none";
         a.href = "data:text/x-vcard;charset=utf8," + escape(card);
-        a.download = `${obj.fullname}.vcf`;
-        a.click();
+        //a.download = `${obj.fullname}.vcf`;
+        //a.click();
         document.body.removeChild(a);
 
 console.log()
