@@ -42,13 +42,15 @@ END:VCARD`;
       document.getElementById("social").innerHTML = "Link: " + obj.social
       document.getElementById("title").innerHTML = obj.title || ""
 
-      let a = document.createElement("a");
-      document.body.appendChild(a);
-      a.style = "display: none";
-      a.href = "data:text/x-vcard;charset=utf8," + escape(card);
-      a.download = `${obj.fullname}.vcf`;
-      a.click();
-      document.body.removeChild(a);
+      document.onload = function() {
+        let a = document.createElement("a");
+        document.body.appendChild(a);
+        a.style = "display: none";
+        a.href = "data:text/x-vcard;charset=utf8," + escape(card);
+        a.download = `${obj.fullname}.vcf`;
+        a.click();
+        document.body.removeChild(a);
+      }
     </script>
 </body>
 </html>
