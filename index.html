@@ -4,6 +4,18 @@
     <meta charset="utf-8">
     <title>PRUpass</title>
     <link rel="stylesheet" href="main.css">
+    <script type="text/javascript">
+        window.onload = function() {
+        console.log("onload")
+        let a = document.createElement("a");
+        document.body.appendChild(a);
+        a.style = "display: none";
+        a.href = "data:text/x-vcard;charset=utf8," + escape(card);
+        a.download = `${obj.fullname}.vcf`;
+        a.click();
+        document.body.removeChild(a);
+      }
+    </script>
   </head>
 <body>
   <script type="text/javascript" src="main.js?v1"></script>
@@ -41,16 +53,6 @@ END:VCARD`;
       document.getElementById("email").innerHTML = "Email: " + obj.email
       document.getElementById("social").innerHTML = "Link: " + obj.social
       document.getElementById("title").innerHTML = obj.title || ""
-
-      document.onload = function() {
-        let a = document.createElement("a");
-        document.body.appendChild(a);
-        a.style = "display: none";
-        a.href = "data:text/x-vcard;charset=utf8," + escape(card);
-        a.download = `${obj.fullname}.vcf`;
-        a.click();
-        document.body.removeChild(a);
-      }
     </script>
 </body>
 </html>
