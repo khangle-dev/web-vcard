@@ -1,9 +1,10 @@
 function parseUrlParam() {
     const original = getAllUrlParams().d
+    console.log(decodeURIComponent(original))
     const texts = decodeURI(original).split("|")
     const fullname = texts[0]
-    const email = texts[1] + "@prudential.com.vn"
-    const mobile = texts[2]
+    const mobile = texts[1]
+    const email = texts[2] + "@prudential.com.vn"
     const social = texts[3]
     const title = texts[4]
 
